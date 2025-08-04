@@ -132,7 +132,7 @@ body {
 
 .skill-marquee {
     display: flex;
-    animation: marquee 15s linear infinite;
+    animation: marquee 10s linear infinite;
     gap: 1rem;
 }
 
