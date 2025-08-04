@@ -3,106 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyaw Khaung Myo Lwin - Portfolio</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link href="styles.css" rel="stylesheet">
-</head>
-<body data-bs-spy="scroll" data-bs-target="#navbar-main">
-    <!-- Navigation -->
-    <nav id="navbar-main" class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="https://www.linkedin.com/in/kyaw-khaung-myo-lwin/">Kyaw Khaung Myo Lwin</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <title>I am Abhi Verma.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Home Section -->
-    <header id="home" class="hero-section text-white text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Kyaw Khaung Myo Lwin</h1>
-            <h2 class="h3 mb-4">Software Developer and Data Analyst</h2>
-            <p class="lead mb-4">Building Data-Driven Solutions for Impact</p>
-            <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
-        </div>
-    </header>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '↓';
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #4ecdc4;
+        }
+
+        .skill-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            overflow: hidden;
+            height: 100px;
+            position: relative;
+        }
+
+        .skill-marquee {
+            display: flex;
+            animation: marquee 20s linear infinite;
+            gap: 1rem;
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            flex-shrink: 0;
+        }
+
+        .skill-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .experiences {
+            margin-top: 4rem;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .experience-details h3 {
+            font-size: 1.3rem;
+            color: #4ecdc4;
+        }
+
+        .experience-details .company {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        .experience-details .date {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            margin-top: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: #4ecdc4;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #4ecdc4;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>I am Abhi Verma.</h1>
+        <div class="scroll-indicator">Scroll to Explore</div>
+    </section>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section class="section">
         <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p>I am a Computer Science Student at Columbia University with experience in software development and data analysis. I'm passionate about leveraging technology and analysis to solve real-world challenges. I'm eager to be a part of the movement that fosters creativity and allow ambitious people like myself to create impactful solutions to our society.</p>
-                    <div class="contact-info mt-4">
-                        <p>
-                            <i class="fas fa-map-marker-alt"></i> New York, NY | 
-                            <i class="fas fa-phone"></i> (917) 279-2972 | 
-                            <i class="fas fa-envelope"></i> kyawkhaung.ml01@gmail.com
-                        </p>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/kyaw-khaung-myo-lwin/" class="btn btn-outline-dark mx-2" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                            <a href="https://github.com/kyawkhaungml" class="btn btn-outline-dark mx-2" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
+            <h2>A Little More About Myself.</h2>
+            <div class="about">
+                <div class="about-text">
+                    <p>As a Computer Engineering student at the University of British Columbia, I am passionate about leveraging technology to solve real-world problems. With a strong foundation in full-stack development, AI/ML, data processing and solution architecture, I have also gained valuable hands-on experience through my work at Amazon, the AWS Cloud Innovation Centre (CIC) and the Launch Pad design team at UBC.</p>
+                    
+                    <p>These experiences have allowed me to create scalable, client-centric solutions and contribute to open-source projects while collaborating with industry professionals.</p>
+                    
+                    <p>I strive to be a well-rounded and innovative individual, always eager to learn and embrace challenges head-on. Beyond coding, I enjoy playing basketball, working out, listening to music, and watching the latest movies or TV shows. My ultimate goal is to use technology to enhance the well-being of humanity and leave a positive, lasting impact on society through meaningful innovation.</p>
                 </div>
+                <div class="profile-img" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); display: flex; align-items: center; justify-content: center; font-size: 4rem;">👨‍💻</div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="bg-light py-5">
+    <section class="section">
         <div class="container">
-            <h2 class="text-center mb-4">Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3 class="card-title">Programming Languages</h3>
-                            <span class="badge bg-primary m-1">C++</span>
-                            <span class="badge bg-primary m-1">Python</span>
-                            <span class="badge bg-primary m-1">Java</span>
-                            <span class="badge bg-primary m-1">Swift</span>
-                            <span class="badge bg-primary m-1">SQL</span>
-                            <span class="badge bg-primary m-1">JavaScript</span>
-                            <span class="badge bg-primary m-1">PHP</span>
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-icons">
+                        <div class="skill-marquee">
+                            <div class="skill-icon">🐍</div>
+                            <div class="skill-icon">☕</div>
+                            <div class="skill-icon">⚡</div>
+                            <div class="skill-icon">📜</div>
+                            <div class="skill-icon">🔷</div>
+                            <div class="skill-icon">🌐</div>
+                            <div class="skill-icon">🎨</div>
+                            <div class="skill-icon">💾</div>
+                            <div class="skill-icon">🐍</div>
+                            <div class="skill-icon">☕</div>
+                            <div class="skill-icon">⚡</div>
+                            <div class="skill-icon">📜</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3 class="card-title">Tools & Technologies</h3>
-                            <span class="badge bg-secondary m-1">Git</span>
-                            <span class="badge bg-secondary m-1">GitHub</span>
-                            <span class="badge bg-secondary m-1">VSCode</span>
-                            <span class="badge bg-secondary m-1">Xcode</span>
-                            <span class="badge bg-secondary m-1">Android Studio</span>
-                            <span class="badge bg-secondary m-1">QT</span>
-                            <span class="badge bg-secondary m-1">Microsoft Office</span>
-                            <span class="badge bg-secondary m-1">React Native</span>
-                            <span class="badge bg-secondary m-1">MongoDB</span>
+
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-icons">
+                        <div class="skill-marquee">
+                            <div class="skill-icon">⚛️</div>
+                            <div class="skill-icon">🔧</div>
+                            <div class="skill-icon">🦋</div>
+                            <div class="skill-icon">💨</div>
+                            <div class="skill-icon">🌶️</div>
+                            <div class="skill-icon">🐼</div>
+                            <div class="skill-icon">🔢</div>
+                            <div class="skill-icon">🧠</div>
+                            <div class="skill-icon">🤖</div>
+                            <div class="skill-icon">👁️</div>
+                            <div class="skill-icon">🚀</div>
+                            <div class="skill-icon">🧪</div>
+                            <div class="skill-icon">⚛️</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Software Tools</h3>
+                    <div class="skill-icons">
+                        <div class="skill-marquee">
+                            <div class="skill-icon">☁️</div>
+                            <div class="skill-icon">🐳</div>
+                            <div class="skill-icon">🟢</div>
+                            <div class="skill-icon">🐘</div>
+                            <div class="skill-icon">🍃</div>
+                            <div class="skill-icon">🌍</div>
+                            <div class="skill-icon">📊</div>
+                            <div class="skill-icon">📝</div>
+                            <div class="skill-icon">🏢</div>
+                            <div class="skill-icon">☁️</div>
+                            <div class="skill-icon">🐳</div>
                         </div>
                     </div>
                 </div>
@@ -111,54 +425,63 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-5">
+    <section class="section">
         <div class="container">
-            <h2 class="text-center mb-4">Experience</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Data Analyst Intern</h3>
-                            <h4 class="card-subtitle mb-2 text-muted">BetaNYC</h4>
-                            <p class="card-text">
-                                <small>June 2023 – August 2023 | New York, NY</small>
-                            </p>
-                            <ul class="card-text">
-                                <li>Mastered data analysis with OpenStreetMap and Excel</li>
-                                <li>Led a community workshop</li>
-                                <li>Developed a public space data playbook</li>
-                            </ul>
+            <h2>My Experience</h2>
+            <div class="experiences">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-logo">📦</div>
+                        <div class="experience-details">
+                            <h3>Software Development Engineer Intern</h3>
+                            <div class="company">Amazon</div>
+                            <div class="date">May 2025 - Present</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Data Analysis Intern</h3>
-                            <h4 class="card-subtitle mb-2 text-muted">Koe Koe Tech</h4>
-                            <p class="card-text">
-                                <small>March 2020 – June 2020 | Yangon, Myanmar</small>
-                            </p>
-                            <ul class="card-text">
-                                <li>Refined grant proposals with data insights</li>
-                                <li>Expanded funding opportunities</li>
-                            </ul>
-                        </div>
+                    <div class="experience-description">
+                        The AWS Kumo team is a group within AWS Support that builds the internal tools, automation, and AI‑powered systems used by support engineers and customers alike. As an intern, I developed an AI agent that provides personalized recommendations for AWS technical account managers, documented the solution architecture and low-level design as well as setup a CI/CD pipeline to automate the deployment of the agent.
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Marketing Manager</h3>
-                            <h4 class="card-subtitle mb-2 text-muted">Summit Bar and Restaurant</h4>
-                            <p class="card-text">
-                                <small>January 2019 – February 2020 | Yangon, Myanmar</small>
-                            </p>
-                            <ul class="card-text">
-                                <li>Boosted revenue 40% with a 40/60 profit strategy</li>
-                                <li>Led marketing campaigns</li>
-                            </ul>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-logo">☁️</div>
+                        <div class="experience-details">
+                            <h3>Software Developer Co-op</h3>
+                            <div class="company">AWS Cloud Innovation Centre</div>
+                            <div class="date">May 2024 - December 2024</div>
                         </div>
+                    </div>
+                    <div class="experience-description">
+                        In collaboration with Amazon Web Services, UBC's Cloud Innovation Centre—the first of its kind in Canada—creates open-source software solutions for a diverse range of sponsors. As a CIC software developer, I designed, built, and deployed full-stack web applications leveraging AI models, RAG, and ETL pipelines.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-logo">🚀</div>
+                        <div class="experience-details">
+                            <h3>Software Developer</h3>
+                            <div class="company">UBC Launch Pad</div>
+                            <div class="date">January 2023 - April 2024</div>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        UBC Launch Pad is a student-led software engineering design team dedicated to developing innovative projects in a collaborative environment. Being part of this team allowed me to connect with like-minded tech enthusiasts while gaining hands-on experience with industry-standard development tools and best practices.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company-logo">🎓</div>
+                        <div class="experience-details">
+                            <h3>Computer Science TA</h3>
+                            <div class="company">Henry Wise Wood High School</div>
+                            <div class="date">September 2021 - January 2022</div>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        I reviewed and provided constructive feedback on assignments covering object-oriented programming, data structures, and both iterative and recursive functions in Java and Python. Additionally, I developed automated tests to ensure code reliability.
                     </div>
                 </div>
             </div>
@@ -166,109 +489,111 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="bg-light py-5">
+    <section class="section">
         <div class="container">
-            <h2 class="text-center mb-4">Projects</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Stock Predictor</h3>
-                            <h4 class="card-subtitle mb-2 text-muted">Full-Stack Developer</h4>
-                            <p class="card-text">
-                                <small>March 2025</small>
-                            </p>
-                            <ul class="card-text">
-                                <li>Built a stock forecasting app with Streamlit</li>
-                                <li>Utilized yfinance and Prophet for real-time insights</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Live Demo</a>
-                            <a href="https://github.com/kyawkhaungml/Stock-Prediction-App" target="_blank" class="btn btn-outline-secondary">GitHub Repo</a>
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">⚛️</div>
+                    <div class="project-content">
+                        <div class="project-title">Quantum AI</div>
+                        <div class="project-description">
+                            Created for the Stewart Blusson Quantum Matter Institute, this chatbot application leverages the Llama 3 70B LLM and RAG to help students, professors and researchers answer their queries about quantum matter materials.
                         </div>
+                        <a href="#" class="project-link">View on GitHub</a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">CourseMatch</h3>
-                            <h4 class="card-subtitle mb-2 text-muted">Full-Stack Developer</h4>
-                            <p class="card-text">
-                                <small>September 2024</small>
-                            </p>
-                            <ul class="card-text">
-                                <li>Created a course discovery web app</li>
-                                <li>Used JavaScript, PHP, and MySQL</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Live Demo</a>
-                            <a href="https://github.com/kyawkhaungml/CourseMatch" target="_blank" class="btn btn-outline-secondary">GitHub Repo</a>
+
+                <div class="project-card">
+                    <div class="project-image">🏎️</div>
+                    <div class="project-content">
+                        <div class="project-title">RoboRacer</div>
+                        <div class="project-description">
+                            An autonomous driving system for the F1TENTH car using ROS, enabling high-speed navigation with obstacle avoidance, vision-based lap detection and emergency stopping in dynamic environments.
                         </div>
+                        <a href="#" class="project-link">View on GitHub</a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Mental Health Schedule Builder</h3>
-                            <h4 class="card-subtitle mb-2 text-muted">Application Developer</h4>
-                            <p class="card-text">
-                                <small>April 2024</small>
-                            </p>
-                            <ul class="card-text">
-                                <li>Developed a C++/QT app for personalized mental health schedules</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Live Demo</a>
-                            <a href="https://github.com/kyawkhaungml/Spring2023_Honors_Project" target="_blank" class="btn btn-outline-secondary">GitHub Repo</a>
+
+                <div class="project-card">
+                    <div class="project-image">📄</div>
+                    <div class="project-content">
+                        <div class="project-title">Faculty CV</div>
+                        <div class="project-description">
+                            A web platform for the UBC Faculty of Medicine to streamline the CV creation process by allowing faculty to input their data, integrating external data through ETL pipelines.
                         </div>
+                        <a href="#" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🎵</div>
+                    <div class="project-content">
+                        <div class="project-title">Moodify</div>
+                        <div class="project-description">
+                            Created to simplify music discovery, this command-line tool uses a custom-trained neural network and Spotify's API to generate personalized playlists based on mood.
+                        </div>
+                        <a href="#" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🌌</div>
+                    <div class="project-content">
+                        <div class="project-title">Cosmic Gateway</div>
+                        <div class="project-description">
+                            This fully serverless application, part of UBC Launch Pad's internal tools, was created to improve document management for over 500 members enhancing accessibility and security.
+                        </div>
+                        <a href="#" class="project-link">Link to Notion</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🏥</div>
+                    <div class="project-content">
+                        <div class="project-title">EpiLog</div>
+                        <div class="project-description">
+                            Developed to help individuals with epilepsy, this mobile health application consolidates epilepsy management into one platform, making it easy to share data with healthcare providers.
+                        </div>
+                        <a href="#" class="project-link">View on GitHub</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                    <div class="contact-info text-center mt-4">
-                        <p>New York, NY | (917) 279-2972 | kyawkhaung.ml01@gmail.com</p>
-                        <div class="social-links">
-                            <a href="#" class="text-dark mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
-                            <a href="#" class="text-dark mx-2"><i class="fab fa-github fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Smooth scrolling animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            <p>&copy; 2024 Kyaw Khaung Myo Lwin. All Rights Reserved.</p>
-        </div>
-    </footer>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-    <!-- Bootstrap 5 JS and Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll for the scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('.section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
 </body>
 </html>
