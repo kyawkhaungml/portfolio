@@ -99,7 +99,7 @@ body {
     border-radius: 20px;
     background-image: url("https://github.com/kyawkhaungml/portfolio/blob/main/profile.jpg?raw=true");
     background-size: cover;
-    background-position: center;
+    background-position: center 60%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
