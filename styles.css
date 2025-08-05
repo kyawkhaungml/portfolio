@@ -136,8 +136,8 @@ body {
     gap: 1rem;
 }
 .skill-icon {
-    width: 20%;
-    height: 20%;
+    width: 30%;
+    height: 30%;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
