@@ -164,8 +164,10 @@ function initSkillMarqueeLoop() {
         if (track && track.children.length > 0) {
             // Duplicate the icons for seamless looping
             track.innerHTML += track.innerHTML;
+            track.innerHTML += track.innerHTML;
         }
     });
 }
+
 
 
