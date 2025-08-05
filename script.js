@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initSmoothScrolling();
     initParallaxEffect();
+    initSkillMarqueeLoop(); // <--- Add this line!
 });
 
 // Smooth scrolling animation for sections
@@ -155,3 +156,16 @@ const optimizedScrollHandler = throttle(() => {
 
 // Replace the scroll event listener in initParallaxEffect with the optimized version
 // window.addEventListener('scroll', optimizedScrollHandler);
+
+function initSkillMarqueeLoop() {
+    document.querySelectorAll('.skill-marquee').forEach(marquee => {
+        // Expecting .skill-track inside .skill-marquee
+        let track = marquee.querySelector('.skill-track');
+        if (track && track.children.length > 0) {
+            // Duplicate the icons for seamless looping
+            track.innerHTML += track.innerHTML;
+        }
+    });
+}
+
+
