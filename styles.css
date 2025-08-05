@@ -109,9 +109,9 @@ body {
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;  /* Stack each skill-category vertically */
+    gap: 2rem;               /* Spacing between categories */
     margin-top: 3rem;
 }
 
