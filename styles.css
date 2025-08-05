@@ -143,6 +143,7 @@ body {
     animation: marquee 10s linear infinite;
     width: max-content;
 }
+/* Keep this - it's your container styling */
 .skill-icon {
     width: 80%;
     height: 80%;
@@ -157,18 +158,22 @@ body {
     flex-shrink: 0;
 }
 
-.skill-icon img {
-    width: 70%;
-    height: 70%;
+/* Replace your old img and svg rules with these */
+.skill-icon img, 
+.skill-icon svg {
+    max-width: 40px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
 }
 
+/* For inline SVGs, also set specific dimensions */
 .skill-icon svg {
-    width: 70%;
-    height: 70%;
-    fill: white; /* fallback if SVG uses fill */
-    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
 }
 
 .skill-icon:hover {
