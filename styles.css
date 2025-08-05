@@ -181,15 +181,17 @@ body {
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-.skill-item {
+/*.skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
     min-width: 120px;
     margin-right: 32px;
+}*/
+.skill-label {
+    margin-top: 12px; /* Adjust the value as needed */
 }
-
 .experiences {
     margin-top: 4rem;
 }
