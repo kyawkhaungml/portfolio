@@ -145,11 +145,11 @@ body {
 }
 /* Keep this - it's your container styling */
 .skill-icon {
-    width: 60%;
-    height: 60%;
+    width: 65%;
+    height: 65%;
     /*background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;*/
+    border: 1px solid rgba(255, 255, 255, 0.2);*/
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,8 +161,8 @@ body {
 /* Replace your old img and svg rules with these */
 .skill-icon img, 
 .skill-icon svg {
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 65px;
+    max-height: 65px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -172,8 +172,8 @@ body {
 
 /* For inline SVGs, also set specific dimensions */
 .skill-icon svg {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
 }
 
 .skill-icon:hover {
