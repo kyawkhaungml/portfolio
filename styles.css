@@ -131,13 +131,21 @@ body {
 }
 
 .skill-marquee {
+    /*display: flex;
+    animation: marquee 7s linear infinite;*/
+    overflow: hidden;
+    width: 100%;
+    /*gap: 1rem;*/
+}
+.skill-track{
     display: flex;
-    animation: marquee 7s linear infinite;
     gap: 1rem;
+    animation: marquee 10s linear infinite;
+    width: max-content;
 }
 .skill-icon {
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
