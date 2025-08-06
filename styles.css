@@ -20,6 +20,7 @@
         }
 
         .nav-container {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
