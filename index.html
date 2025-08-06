@@ -7,17 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="main-nav">
-    <div class="logo">
-        <span>KK</span>
-    </div>
-    <ul class="nav-links">
-        <li class="active"><a href="#home">HOME</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#experience">EXPERIENCE</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-    </ul>
-</nav>
+        <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Kyaw Khaung Myo Lwin</a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </nav>
     <!-- Hero Section -->
     <section class="hero">
         <h1>I am Kyaw Khaung Myo Lwin.</h1>
@@ -25,7 +33,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="section">
+    <section class="section" id="about">
         <div class="container">
             <h2>A Little More About Myself.</h2>
             <div class="about">
@@ -42,7 +50,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="section">
+    <section class="section" id="skills">
         <div class="container">
             <h2>My Skills</h2>
             <div class="skills-grid">
@@ -187,7 +195,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section class="section">
+    <section class="section" id="experience">
         <div class="container">
             <h2>My Experience</h2>
             <div class="experiences">
@@ -236,7 +244,7 @@ At Summit Bar & Restaurant, I leveraged Excel to model profitability scenarios, 
     </section>
 
     <!-- Projects Section -->
-    <section class="section">
+    <section class="section" id="projects">
         <div class="container">
             <h2>My Projects</h2>
             <div class="projects-grid">
@@ -309,7 +317,7 @@ At Summit Bar & Restaurant, I leveraged Excel to model profitability scenarios, 
         </div>
     </section>
     
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
     <div class="footer-socials">
         <a href="https://linkedin.com/in/kyawkhaungml" target="_blank" aria-label="LinkedIn">
             <svg width="40" height="40" fill="#8a9ba8" viewBox="0 0 24 24">
