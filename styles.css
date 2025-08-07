@@ -462,6 +462,9 @@ body {
             height: 250px;
             position: relative;
             overflow: hidden;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
         }
 
 
