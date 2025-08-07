@@ -458,8 +458,9 @@ body {
 }*/
 
 .project-image {
-    width: 300px;
+    width: 100%;
     height: 250px;
+    object-fit: cover;
     position: relative;
     overflow: hidden;
 }
