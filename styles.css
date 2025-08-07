@@ -457,13 +457,12 @@ body {
     justify-content: flex-start;
 }*/
 
-.project-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    position: relative;
-    overflow: hidden;
-}
+        .project-image {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
 
 
 
