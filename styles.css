@@ -167,15 +167,11 @@ body {
 }
 
 body {
-   /* font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
     color: white;
-    overflow-x: hidden;*/
-
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #ffffff;
-    color: #0f1419; /* dark text for readability on white */
     overflow-x: hidden;
+
 }
 
 .hero {
